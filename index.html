@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Staj ve İş İlanı Panosu</title>
+  <link rel="stylesheet" href="stil.css">
+</head>
+<body>
+  <header>
+    <h1>Staj ve İş İlanı Panosu</h1>
+    <nav>
+      <a href="#ilanlar-bolumu">İlanlar</a>
+      <a href="#basvuru-bolumu">Başvuru</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="ilanlar-bolumu">
+      <div class="baslik-satiri">
+        <h2>İlanlar</h2>
+        <span id="liste-sayisi">Başvuracaklarım: 0</span>
+      </div>
+
+      <div class="kontroller">
+        <div>
+          <label for="alan">Alan</label>
+          <select id="alan">
+            <option value="">Tüm alanlar</option>
+            <option value="on-yuz">Ön yüz</option>
+            <option value="arka-uc">Arka uç</option>
+            <option value="veri">Veri</option>
+            <option value="sistem">Sistem</option>
+          </select>
+        </div>
+        <div>
+          <label for="arama">Ara</label>
+          <input type="search" id="arama" placeholder="Pozisyon ya da firma">
+        </div>
+      </div>
+
+      <p id="durum" role="status"></p>
+      <ul id="ilanlar"></ul>
+    </section>
+
+    <section id="basvuru-bolumu">
+      <h2>Başvuru</h2>
+      <form id="basvuru">
+        <div>
+          <label for="ad">Ad soyad</label>
+          <input type="text" id="ad" name="ad" required>
+        </div>
+        <div>
+          <label for="eposta">E-posta</label>
+          <input type="email" id="eposta" name="eposta" required>
+        </div>
+        <div>
+          <label for="telefon">Cep telefonu</label>
+          <input type="tel" id="telefon" name="telefon" required
+                 pattern="05[0-9]{9}"
+                 title="05 ile başlayan 11 rakam girin (örnek: 05321234567)">
+        </div>
+        <div>
+          <label for="baglanti">GitHub ya da CV bağlantınız</label>
+          <input type="url" id="baglanti" name="baglanti" required
+                 placeholder="https://github.com/kullanici">
+        </div>
+        <div>
+          <label for="ilgi-alani">İlgilendiğiniz alan</label>
+          <select id="ilgi-alani" name="ilgi-alani" required>
+            <option value="">Seçiniz</option>
+            <option value="on-yuz">Ön yüz</option>
+            <option value="arka-uc">Arka uç</option>
+            <option value="veri">Veri</option>
+            <option value="sistem">Sistem</option>
+          </select>
+        </div>
+        <div class="onay">
+          <input type="checkbox" id="onay" name="onay" required>
+          <label for="onay">Bilgilerimin bu başvuru için kullanılmasını kabul ediyorum.</label>
+        </div>
+        <button type="submit">Başvur</button>
+      </form>
+      <p id="basvuru-ileti" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Muberra Reyhan Elif Yazıcı</p>
+  </footer>
+
+  <script src="form.js" defer></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

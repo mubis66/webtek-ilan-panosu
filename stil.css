@@ -1,0 +1,66 @@
+:root {
+  --ton: 21;                              /* KENDİ TONUNUZU YAZIN */
+  --ana: hsl(var(--ton) 60% 35%);
+  --acik: hsl(var(--ton) 40% 95%);
+  --metin: #222;
+  --zemin: #fff;
+  --cizgi: #d5d5d5;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--metin);
+  background: var(--acik);
+  line-height: 1.5;
+}
+
+header, main, footer { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+
+h1, h2 { color: var(--ana); }
+h1 { margin: 0 0 .5rem; }
+
+nav a { color: var(--ana); margin-right: 1rem; font-weight: 600; }
+
+section { margin-bottom: 2rem; }
+
+.baslik-satiri { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem 1rem; }
+#liste-sayisi { font-weight: 600; color: var(--ana); }
+
+.kontroller { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; }
+.kontroller label { display: block; font-size: .9rem; }
+
+label { font-weight: 500; }
+input, select, button { font: inherit; padding: .4rem .6rem; }
+input[type="text"], input[type="email"], input[type="tel"], input[type="url"],
+input[type="search"], select { border: 1px solid var(--cizgi); border-radius: 6px; background: var(--zemin); }
+
+button {
+  background: var(--ana); color: #fff; border: 0; border-radius: 6px; cursor: pointer;
+}
+button:hover { filter: brightness(1.15); }
+
+/* Adım 4: mobile-first ızgara. 375 px'te tek sütun, 1200 px'te üç dört sütun. */
+#ilanlar {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+}
+.kart {
+  background: var(--zemin); border: 1px solid var(--cizgi); border-radius: 8px;
+  padding: 1rem; display: flex; flex-direction: column; gap: .25rem;
+}
+.kart h3 { margin: 0; color: var(--ana); }
+.kart p { margin: 0; }
+.kart .basvur { margin-top: auto; align-self: flex-start; }
+
+#durum { font-weight: 500; }
+#durum[data-durum="hata"] { color: #b00020; }
+
+#basvuru { display: grid; gap: .75rem; max-width: 420px; }
+#basvuru div { display: flex; flex-direction: column; gap: .2rem; }
+#basvuru .onay { flex-direction: row; align-items: flex-start; gap: .5rem; }
+
+footer { color: #555; }
