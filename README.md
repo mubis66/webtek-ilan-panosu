@@ -1,7 +1,7 @@
 # Staj ve İş İlanı Panosu
 
 Ad Soyad: Muberra Reyhan Elif Yazıcı
-Site: https://<KULLANICI-ADIN>.github.io/webtek-ilan-panosu/
+Site: https://mubis66.github.io/webtek-ilan-panosu/
 
 Web Teknolojileri dersi dönem ödevi. Yalnızca HTML, CSS ve JavaScript kullanıldı.
 
